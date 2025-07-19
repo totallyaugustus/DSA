@@ -3,11 +3,7 @@ Basic segment tree for sum and maxima queries
 */
 
 #include <iostream>
-#include <vector>
 using namespace std;
-
-#pragma GCC optimize("Ofast,unroll-loops")
-#pragma GCC target("avx2")
 
 #define ll long long
 #define MAXN (ll)(1e5)
