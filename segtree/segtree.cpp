@@ -3,10 +3,10 @@ Basic segment tree for sum and maxima queries
 */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 #define ll long long
-#define MAXN (ll)(1e5)
 #define inf (1LL << 60)
 #define l(i) ((i) << 1)
 #define r(i) (l(i) | 1)
@@ -25,13 +25,18 @@ struct Node {
 };
 
 struct Segtree {
-    Node st[4 * MAXN + 1];
+    vector<ll> val;
+    vector<Node> st;
     Segtree() {
-        
+        st = {};
+    }
+    Segtree(vector<ll> const& arr) {
+        val = arr;
+        st.resize(4 * val.size() + 1);
     }
     void init(ll i, ll lb, ll rb) {
         if (lb == rb) {
-            st[i] = {};
+            st[i] = {val[lb], val[lb]};
         }
         else {
             ll mb = (lb + rb) / 2;
