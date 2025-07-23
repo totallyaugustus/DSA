@@ -32,7 +32,7 @@ struct Segtree {
     }
     Segtree(vector<ll> const& arr) {
         val = arr;
-        st.resize(4 * val.size() + 1);
+        st.resize(4 * val.size());
     }
     void init(ll i, ll lb, ll rb) {
         if (lb == rb) {
